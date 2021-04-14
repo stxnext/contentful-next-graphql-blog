@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { getPosts } from "../src/utils/contentful";
+import { getAllPosts } from "../src/utils/contentful";
 
 export default function Home({ posts }) {
   return (
@@ -23,7 +23,7 @@ export default function Home({ posts }) {
 }
 
 export async function getServerSideProps() {
-  const posts = await getPosts();
+  const posts = await getAllPosts();
   return {
     props: {
       posts,
