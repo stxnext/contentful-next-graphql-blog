@@ -3,22 +3,25 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import styled from "styled-components";
 import { getAllPosts } from "../src/utils/contentful";
+import PostOverview from "../src/components/PostOverview";
 
 export default function Home({ posts }) {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {posts.map((post) => (
-        <Link href="/posts/[id]" as={`/posts/${post.slug}`}>
-          <A>
-            <strong>{post.title}</strong>
-          </A>
-        </Link>
-      ))}
+      <PostsContainer>
+        {posts.map((post) => (
+          <Link href="/posts/[id]" as={`/posts/${post.slug}`}>
+            <a>
+              <PostOverview title={post.title} />
+            </a>
+          </Link>
+        ))}
+      </PostsContainer>
     </div>
   );
 }
@@ -32,6 +35,12 @@ export async function getServerSideProps() {
   };
 }
 
-const A = styled.a`
-  color: blue;
+const Site = styled.div``;
+
+const Header = styled.div``;
+
+const PostsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

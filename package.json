@@ -12,6 +12,7 @@
     "@apollo/client": "^3.3.15",
     "apollo-link": "^1.2.14",
     "apollo-link-http": "^1.5.17",
+    "babel-plugin-styled-components": "^1.12.0",
     "contentful": "^8.2.1",
     "graphql": "^15.5.0",
     "next": "10.1.3",
