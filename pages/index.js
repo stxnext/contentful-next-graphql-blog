@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import styled from "styled-components";
 import { getAllPosts } from "../src/utils/contentful";
 
 export default function Home({ posts }) {
@@ -13,9 +14,9 @@ export default function Home({ posts }) {
 
       {posts.map((post) => (
         <Link href="/posts/[id]" as={`/posts/${post.slug}`}>
-          <a>
+          <A>
             <strong>{post.title}</strong>
-          </a>
+          </A>
         </Link>
       ))}
     </div>
@@ -30,3 +31,7 @@ export async function getServerSideProps() {
     },
   };
 }
+
+const A = styled.a`
+  color: blue;
+`;
