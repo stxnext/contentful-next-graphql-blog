@@ -3,6 +3,7 @@ import Head from "next/head";
 import styled from "styled-components";
 import { getAllPosts } from "../src/utils/contentful";
 import PostOverview from "../src/components/PostOverview";
+import Header from "../src/components/Header";
 
 export default function Home({ posts }) {
   return (
@@ -12,12 +13,19 @@ export default function Home({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Header />
+
       <PostsContainer>
         {posts.map((post) => (
-          <Link href="/posts/[id]" as={`/posts/${post.slug}`}>
-            <a>
-              <PostOverview title={post.title} />
-            </a>
+          <Link href="/posts/[id]" as={`/posts/${post.slug}`} passHref>
+            <A>
+              <PostOverview
+                title={post.title}
+                image={post.image.url}
+                subtitle={post.subtitle}
+                publicationDate={post.sys.publishedAt}
+              />
+            </A>
           </Link>
         ))}
       </PostsContainer>
@@ -34,12 +42,14 @@ export async function getServerSideProps() {
   };
 }
 
-const Site = styled.div``;
-
-const Header = styled.div``;
-
 const PostsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2rem;
+`;
+
+const A = styled.a`
+  text-decoration: none;
+  color: inherit;
 `;

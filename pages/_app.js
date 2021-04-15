@@ -5,12 +5,14 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 `;
 
 const theme = {
   colors: {
-    primary: "#0070f3",
+    black: "#292929",
+    grey: "#757575",
   },
 };
 

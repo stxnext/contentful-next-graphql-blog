@@ -9,8 +9,14 @@ export async function getAllPosts() {
           items {
             title
             subtitle
+            sys {
+              publishedAt
+            }
             author
             slug
+            image {
+              url
+            }
           }
         }
       }
