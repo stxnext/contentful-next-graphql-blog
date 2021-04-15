@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
 import styled from "styled-components";
 import { getAllPosts } from "../src/utils/contentful";
 import PostOverview from "../src/components/PostOverview";
