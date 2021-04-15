@@ -3,7 +3,6 @@ import Head from "next/head";
 import styled from "styled-components";
 import { getAllPosts } from "../src/utils/contentful";
 import PostOverview from "../src/components/PostOverview";
-import Header from "../src/components/Header";
 
 export default function Home({ posts }) {
   return (
@@ -12,8 +11,6 @@ export default function Home({ posts }) {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Header />
 
       <PostsContainer>
         {posts.map((post) => (
@@ -33,7 +30,7 @@ export default function Home({ posts }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const posts = await getAllPosts();
   return {
     props: {

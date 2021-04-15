@@ -12,7 +12,6 @@ export async function getAllPosts() {
             sys {
               publishedAt
             }
-            author
             slug
             image {
               url
@@ -31,10 +30,15 @@ export async function getPostBySlug(slug) {
       query GetPostBySlug($slug: String!) {
         postCollection(where: { slug: $slug }) {
           items {
-            slug
             title
             subtitle
-            author
+            sys {
+              publishedAt
+            }
+            image {
+              url
+            }
+            content
           }
         }
       }

@@ -1,4 +1,5 @@
 import { createGlobalStyle, ThemeProvider } from "styled-components";
+import Header from "../src/components/Header";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -21,6 +22,7 @@ function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
+        <Header />
         <Component {...pageProps} />
       </ThemeProvider>
     </>
