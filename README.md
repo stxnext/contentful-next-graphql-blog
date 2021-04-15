@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Prerequisites
 
-## Getting Started
+- Node.js
+- npm
+- Terraform (only for deployments)
 
-First, run the development server:
+## Installation
 
+In the root of the project run below command.
 ```bash
-npm run dev
-# or
-yarn dev
+$ npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+After that create __.env.local__ file in the root of the project and fill it with enviroment variables. You can find their names inside __.env.local.example__
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Running the app
+```bash
+$ npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Deployment
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Build project with below command
+```bash
+$ npm run tf-next
+```
 
-## Learn More
+After build run set of following commands
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+$ export AWS_ACCESS_KEY_ID="your-access-key-id"
+$ export AWS_SECRET_ACCESS_KEY="your-secret-access-key"
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+$ terraform init    # Only needed on the first time running Terraform
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+$ terraform plan    # (Optional) See what resources Terraform will create
+$ terraform apply   # Deploy the Next.js app to your AWS account
+```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Acknowledgements
+* [terraform-aws-next-js](https://github.com/dealmore/terraform-aws-next-js)
