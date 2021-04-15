@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { getPostBySlug } from "../../src/utils/contentful";
 
 interface PostProps {
@@ -25,7 +24,7 @@ const Post = ({
   return (
     <MainContainer>
       <SubContainer>
-        <Title>What’s New In Node.js v15.0.0?</Title>
+        <Title>{title}</Title>
         <Subtitle>{subtitle}</Subtitle>
         <PublicationDate>
           {new Date(publishedAt).toLocaleDateString("en-US", {
@@ -35,7 +34,6 @@ const Post = ({
           })}
         </PublicationDate>
         <Image src={url} width={900} height={600} />
-        {/* <Content>adf asjdhgfah jgsdfhjkga sd</Content> */}
         <Content>{content}</Content>
       </SubContainer>
     </MainContainer>
@@ -57,7 +55,6 @@ export async function getServerSideProps({ params, req, res }) {
 const MainContainer = styled.div`
   display: flex;
   justify-content: center;
-  /* background-color: yellow; */
   margin: 1rem;
   padding: 1rem;
 `;
@@ -65,7 +62,6 @@ const MainContainer = styled.div`
 const SubContainer = styled.div`
   display: flex;
   flex-direction: column;
-  /* background-color: red; */
   padding-top: 2rem;
   width: 43rem;
 `;
