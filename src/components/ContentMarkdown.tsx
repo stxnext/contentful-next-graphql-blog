@@ -16,6 +16,7 @@ const ContentMarkdown = ({ content }: ContentMarkdownProps) => {
           h1: H1,
           h2: H2,
           h3: H3,
+          li: Li,
         },
       }}
     >
@@ -32,7 +33,6 @@ const Content = styled.div`
   font-size: 21px;
   line-height: 32px;
   -webkit-font-smoothing: antialiased;
-  margin-top: 3rem;
 `;
 
 const H1 = styled.div`
@@ -63,4 +63,12 @@ const H3 = styled.div`
   overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
   letter-spacing: -0.506px;
+`;
+
+const Li = styled.li`
+  color: ${({ theme }) => theme.colors.black};
+  font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 21px;
+  line-height: 32px;
+  -webkit-font-smoothing: antialiased;
 `;

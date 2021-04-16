@@ -34,7 +34,9 @@ const Post = ({
             year: "numeric",
           })}
         </PublicationDate>
-        <Image src={url} width={900} height={600} />
+        <MainImageWrapper>
+          <Image src={url} width={900} height={600} />
+        </MainImageWrapper>
         <ContentMarkdown content={content} />
       </SubContainer>
     </MainContainer>
@@ -94,4 +96,8 @@ const PublicationDate = styled.div`
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   margin: 2rem 0;
+`;
+
+const MainImageWrapper = styled.div`
+  margin-bottom: 3rem;
 `;
