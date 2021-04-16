@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 import { getPostBySlug } from "../../src/utils/contentful";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { singlePostOptions } from "../../src/utils/rich-text-mapping";
+import ContentMarkdown from "../../src/components/ContentMarkdown";
 
 interface PostProps {
   title: string;
@@ -14,21 +13,15 @@ interface PostProps {
     url: string;
   };
   content: string;
-  rtContent;
 }
 
 const Post = ({
   content,
-  rtContent,
   image: { url },
   subtitle,
   sys: { publishedAt },
   title,
 }: PostProps) => {
-  const richTextContent = documentToReactComponents(
-    rtContent.json,
-    singlePostOptions
-  );
   return (
     <MainContainer>
       <SubContainer>
@@ -42,8 +35,7 @@ const Post = ({
           })}
         </PublicationDate>
         <Image src={url} width={900} height={600} />
-        <Content>{content}</Content>
-        {richTextContent}
+        <ContentMarkdown content={content} />
       </SubContainer>
     </MainContainer>
   );
@@ -102,13 +94,4 @@ const PublicationDate = styled.div`
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   margin: 2rem 0;
-`;
-
-const Content = styled.div`
-  color: ${({ theme }) => theme.colors.black};
-  font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: 21px;
-  line-height: 32px;
-  -webkit-font-smoothing: antialiased;
-  margin-top: 3rem;
 `;

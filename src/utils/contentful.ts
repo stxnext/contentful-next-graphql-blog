@@ -39,9 +39,6 @@ export async function getPostBySlug(slug) {
               url
             }
             content
-            rtContent {
-              json
-            }
           }
         }
       }
