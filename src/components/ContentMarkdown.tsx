@@ -1,5 +1,6 @@
 import Markdown from "markdown-to-jsx";
 import styled from "styled-components";
+import CodeSnippetMarkdown from "./CodeSnippetMarkdown";
 import ImageMarkdown from "./ImageMarkdown";
 
 interface ContentMarkdownProps {
@@ -17,6 +18,7 @@ const ContentMarkdown = ({ content }: ContentMarkdownProps) => {
           h2: H2,
           h3: H3,
           li: Li,
+          pre: CodeSnippetMarkdown,
         },
       }}
     >
@@ -33,6 +35,7 @@ const Content = styled.div`
   font-size: 21px;
   line-height: 32px;
   -webkit-font-smoothing: antialiased;
+  margin-bottom: 1.5rem;
 `;
 
 const H1 = styled.div`
@@ -43,6 +46,7 @@ const H1 = styled.div`
   overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
   letter-spacing: -0.506px;
+  margin-bottom: 1.5rem;
 `;
 
 const H2 = styled.div`
@@ -53,6 +57,7 @@ const H2 = styled.div`
   overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
   letter-spacing: -0.506px;
+  margin-bottom: 1.5rem;
 `;
 
 const H3 = styled.div`
@@ -63,6 +68,7 @@ const H3 = styled.div`
   overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
   letter-spacing: -0.506px;
+  margin-bottom: 1.5rem;
 `;
 
 const Li = styled.li`
