@@ -59,13 +59,13 @@ This is one of the best and most popular headless CMS product on the market. It 
 - models (like in a normal database),
 - content entries (for content creators).
 
-With such features, we don't even need any specific knowledge about backend services to kickoff our project.
+With such features, we don't even need any specific knowledge about backend services to kick off our project.
 
-Contentful exposes two types of APIs to retrieve our content data: REST API and GraphQL API.
+Contentful exposes two types of APIs to fetch our content data: REST API and GraphQL API.
 
 ## GraphQL
 
-I've chosen this option for the sake of the flexibility of this approach. At the roots, GraphQL is just a specification which defines query language for predictable data transfer across web network. In my opinion, GraphQL creates the most possible pleasant experience for interacting with API and that's the reason why his popularity over the last years is growing so fast. In the example that I'm going to present I used Apollo Client, which is a client-side library for retrieving data from the GraphQL server. It is also a state management library, but this topic is just out of the scope of this article and you can read more about it [here](https://www.apollographql.com/docs/react/ "Apollo Client documentation").
+I've chosen this option for the sake of the flexibility of this approach. At the roots, GraphQL is just a specification which defines query language for predictable data transfer across web network. In my opinion, GraphQL creates the most possible pleasant experience for interacting with API and that's the reason why his popularity over the last years is growing so fast. In the example that I'm going to present I used Apollo Client, which is a client-side library for fetching data from the GraphQL server. It is also a state management library, but this topic is just out of the scope of this article and you can read more about it [here](https://www.apollographql.com/docs/react/ "Apollo Client documentation").
 
 ## Next.js
 
@@ -88,7 +88,7 @@ Then you can go to the *Content* dashboard to create few entries.
 
 ![contentful-setup-2](http://images.ctfassets.net/0sdt661c42qh/6ioFQvTpvfcIHMI6sXtAvx/f652a9054606863d9cfb311414b203bd/Screenshot_2021-04-20_at_10.51.28.png)
 
-After, it is possible to open GraphQL Playground inside your Contentful account. Go to the *Apps* dashboard and install GraphQL Playground. Notice, that we created our robust and ready-to-go GraphQL API in only few clicks!
+After, it is possible to open GraphQL Playground inside your Contentful account. Go to the *Apps* dashboard and install GraphQL Playground. Notice, that we created our robust and ready-to-go GraphQL API in only a few clicks!
 
 ![contentful-setup-3](http://images.ctfassets.net/0sdt661c42qh/6EW8xTN38RtGTeRVvkAigr/6c1240afc4a4124dcfd92cd25670bfb6/Screenshot_2021-04-20_at_10.59.22.png)
 
@@ -123,7 +123,7 @@ CONTENTFUL_SPACE_ID=your-space-id
 CONTENTFUL_ACCESS_TOKEN=your-access-token
 ```
 
-Swap mocked values for your real secrets. You can retrieve them from the Contentful Settings dashboard.
+Swap mocked values for your real secrets. You can take them from the Contentful Settings dashboard.
 
 ![apollo-client-setup](http://images.ctfassets.net/0sdt661c42qh/3hZ5fTRwzCHGW5K8Nr0pJ2/16caa947c9661f1ab36cfa34f960a043/Screenshot_2021-04-20_at_12.11.05.png)
 
