@@ -5,12 +5,13 @@ interface CodeSnippetMarkdownProps {}
 
 const CodeSnippetMarkdown = ({
   children: {
-    props: { children: code },
+    props: { children: code, className: language },
   },
 }) => {
+  const formattedLangName = language.substring(5);
   return (
     <SyntaxHighlighterWrapper>
-      <SyntaxHighlighter language="javascript">{code}</SyntaxHighlighter>
+      <SyntaxHighlighter language={formattedLangName}>{code}</SyntaxHighlighter>
     </SyntaxHighlighterWrapper>
   );
 };
